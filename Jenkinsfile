@@ -13,7 +13,7 @@ pipeline {
                 script {
                     if (env.BRANCH_NAME == 'main') {
                         env.TARGET_DIR = "/home/onprem/cicd-prod/web-bimbel"
-                    } else if (env.BRANCH_NAME == 'dev') {
+                    } else if (env.BRANCH_NAME == 'staging') {
                         env.TARGET_DIR = "/home/onprem/cicd-testing/web-bimbel"
                     } else {
                         error "Branch ${env.BRANCH_NAME} is not allowed to deploy"
