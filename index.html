@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les Komputer Anak SD - Cerdas Digital Sejak Dini</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Nunito (Friendly/Rounded) for Headings, Open Sans for Body -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Config for Tailwind Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            blue: '#4facfe',
+                            blueLight: '#e0f2fe',
+                            green: '#43e97b',
+                            greenLight: '#dcfce7',
+                            yellow: '#fa709a', // Using a soft pinkish-yellow/orange accent
+                            yellowLight: '#fef3c7',
+                            dark: '#2d3748'
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['Nunito', 'sans-serif'],
+                        body: ['Open Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #2d3748;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Nunito', sans-serif;
+        }
+        .blob-shape {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .floating-wa {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        .floating-wa:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa-solid fa-laptop-code text-brand-blue text-2xl"></i>
+                <span class="font-heading font-bold text-xl text-gray-800">Cerdas<span class="text-blue-500">Digital</span></span>
+            </div>
+            <div class="hidden md:flex space-x-6 font-semibold text-gray-600 text-sm">
+                <a href="#program" class="hover:text-blue-500 transition">Program</a>
+                <a href="#materi" class="hover:text-blue-500 transition">Materi</a>
+                <a href="#jadwal" class="hover:text-blue-500 transition">Jadwal</a>
+                <a href="#biaya" class="hover:text-blue-500 transition">Biaya</a>
+            </div>
+            <a href="https://bit.ly/daftar-komputeranak?r=qr" target="_blank" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full font-bold text-sm transition shadow-lg transform hover:-translate-y-0.5">
+                Daftar Sekarang
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-gradient-to-br from-blue-50 to-white pt-16 pb-24 overflow-hidden">
+        <!-- Decorative Blobs -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+        <div class="absolute top-0 left-0 -ml-20 -mt-20 w-80 h-80 bg-green-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="w-full md:w-1/2 z-10 text-center md:text-left">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-600 text-xs font-bold tracking-wide mb-4">KHUSUS SD KELAS 4–6</span>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight mb-4">
+                    Les Komputer Anak SD <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-teal-400">Siap Hadapi Era Digital</span> Sejak Dini
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Belajar komputer dari dasar hingga kreatif dengan metode yang mudah dan menyenangkan. Bekali anak Anda skill masa depan sekarang juga.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start mb-8 text-sm font-semibold text-gray-700">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle text-green-500"></i> Biaya Sangat Terjangkau
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-check-circle text-green-500"></i> Pengajar Profesional IT
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="https://bit.ly/daftar-komputeranak?r=qr" target="_blank" class="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-4 rounded-full font-bold shadow-lg transition transform hover:-translate-y-1 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> Daftar Sekarang
+                    </a>
+                    <a href="#program" class="bg-white border-2 border-gray-200 hover:border-blue-300 text-gray-700 px-8 py-4 rounded-full font-bold transition flex items-center justify-center">
+                        Pelajari Lebih Lanjut
+                    </a>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 mt-12 md:mt-0 relative z-10 flex justify-center">
+                <!-- Using an abstract tech education illustration via SVG/Image -->
+                <div class="relative w-full max-w-lg">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Anak belajar komputer" class="rounded-2xl shadow-2xl relative z-10 border-4 border-white transform rotate-2 hover:rotate-0 transition duration-500">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-lg z-20 flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-green-100 p-2 rounded-full text-green-600">
+                            <i class="fa-solid fa-user-graduate text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500">Kelas Kecil</p>
+                            <p class="font-bold text-gray-800">Fokus & Efektif</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="program" class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center max-w-3xl">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Tentang Program Kami</h2>
+            <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                Program ini dirancang khusus untuk siswa/i <strong>SD kelas 4, 5, dan 6</strong>. Kami tidak hanya mengajarkan cara mengetik, tetapi membangun logika berpikir, kreativitas digital, dan pemahaman tentang keamanan berinternet.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-4 bg-blue-50 rounded-xl">
+                    <i class="fa-solid fa-hand-holding-heart text-3xl text-blue-500 mb-3"></i>
+                    <h3 class="font-bold text-gray-800">Ramah Anak</h3>
+                    <p class="text-sm text-gray-600 mt-2">Pendekatan yang sabar dan menyenangkan.</p>
+                </div>
+                <div class="p-4 bg-green-50 rounded-xl">
+                    <i class="fa-solid fa-lightbulb text-3xl text-green-500 mb-3"></i>
+                    <h3 class="font-bold text-gray-800">Kreatif</h3>
+                    <p class="text-sm text-gray-600 mt-2">Mengasah imajinasi lewat proyek digital.</p>
+                </div>
+                <div class="p-4 bg-yellow-50 rounded-xl">
+                    <i class="fa-solid fa-shield-virus text-3xl text-yellow-500 mb-3"></i>
+                    <h3 class="font-bold text-gray-800">Aman</h3>
+                    <p class="text-sm text-gray-600 mt-2">Edukasi internet sehat dan aman.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum / Materi Section -->
+    <section id="materi" class="py-20 bg-blue-50 relative">
+        <!-- Decoration -->
+        <div class="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white to-transparent"></div>
+        
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-blue-600 font-bold tracking-wider uppercase text-sm">Kurikulum Lengkap</span>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mt-2">Apa Saja Yang Dipelajari?</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 border-b-4 border-blue-400 group">
+                    <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-keyboard text-2xl text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Office & Mengetik</h3>
+                    <p class="text-gray-600 text-sm">Teknik mengetik 10 jari, membuat dokumen rapi di Microsoft Word, dan surat menyurat dasar.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 border-b-4 border-orange-400 group">
+                    <div class="w-14 h-14 bg-orange-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-file-powerpoint text-2xl text-orange-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Presentasi Menarik</h3>
+                    <p class="text-gray-600 text-sm">Membuat slide presentasi yang keren dengan PowerPoint, animasi, dan transisi.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 border-b-4 border-purple-400 group">
+                    <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-code text-2xl text-purple-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Coding Dasar (Scratch)</h3>
+                    <p class="text-gray-600 text-sm">Belajar logika pemrograman dasar dengan membuat game dan animasi sederhana menggunakan Scratch.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 border-b-4 border-pink-400 group">
+                    <div class="w-14 h-14 bg-pink-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-palette text-2xl text-pink-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Desain Kreatif</h3>
+                    <p class="text-gray-600 text-sm">Pengenalan dasar desain grafis sederhana untuk membuat poster atau kartu ucapan digital.</p>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition duration-300 border-b-4 border-green-400 group">
+                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-globe text-2xl text-green-600"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Internet Sehat</h3>
+                    <p class="text-gray-600 text-sm">Etika berinternet, browsing aman, dan cara memilah informasi yang baik di dunia maya.</p>
+                </div>
+                
+                 <!-- Card 6 -->
+                 <div class="bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl p-8 shadow-lg flex flex-col items-center justify-center text-center text-white">
+                    <h3 class="text-xl font-bold mb-3">Siap Belajar?</h3>
+                    <p class="text-blue-100 text-sm mb-6">Bergabunglah dengan teman-teman lainnya!</p>
+                    <a href="https://bit.ly/daftar-komputeranak?r=qr" class="bg-white text-blue-600 px-6 py-2 rounded-full font-bold hover:bg-gray-100 transition shadow-md w-full">
+                        Daftar Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us & Teacher Profile -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Why Us -->
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-8">Kenapa Memilih Kami?</h2>
+                    <div class="space-y-6">
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                    <i class="fa-solid fa-wallet text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Biaya Sangat Terjangkau</h4>
+                                <p class="mt-1 text-gray-600">Kualitas pendidikan premium dengan harga yang bersahabat bagi orang tua.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                    <i class="fa-solid fa-book-open text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Modul PDF & Praktik Langsung</h4>
+                                <p class="mt-1 text-gray-600">Materi disesuaikan usia anak, dilengkapi modul PDF dan fokus 80% praktik.</p>
+                            </div>
+                        </div>
+                        <div class="flex">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                    <i class="fa-solid fa-users text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-gray-900">Kelas Kecil (Semi-Privat)</h4>
+                                <p class="mt-1 text-gray-600">Jumlah siswa dibatasi agar pengajar bisa fokus membimbing setiap anak.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Teacher Profile -->
+                <div class="w-full lg:w-1/2 bg-gray-50 rounded-2xl p-8 border border-gray-100">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Profil Pengajar</h3>
+                    <div class="flex items-start gap-5">
+                        <div class="w-20 h-20 bg-gray-300 rounded-full overflow-hidden flex-shrink-0">
+                            <!-- Dummy Avatar -->
+                            <img src="https://ui-avatars.com/api/?name=Kak+Mentor&background=4facfe&color=fff&size=128" alt="Instructor">
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800">Kak Mentor IT</h4>
+                            <span class="text-blue-600 text-sm font-semibold">Praktisi IT & Edukator Anak</span>
+                            <p class="text-gray-600 mt-3 text-sm leading-relaxed">
+                                "Saya adalah seorang profesional IT yang memiliki passion dalam mengajar. Saya percaya bahwa mengenalkan teknologi dengan cara yang benar sejak dini akan membuka banyak peluang bagi masa depan anak."
+                            </p>
+                            <div class="mt-4 flex gap-3">
+                                <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold">Experienced</span>
+                                <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold">Friendly</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section (Jadwal, Lokasi, Biaya) -->
+    <section id="jadwal" class="py-16 bg-gradient-to-br from-green-50 to-blue-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Jadwal -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-green-500 text-center">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-regular fa-clock text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Jadwal Kelas</h3>
+                    <ul class="text-gray-600 space-y-3">
+                        <li class="border-b pb-2">
+                            <span class="font-bold text-gray-800 block">Sabtu</span>
+                            15.30 – 17.00 WIB
+                        </li>
+                        <li>
+                            <span class="font-bold text-gray-800 block">Ahad</span>
+                            08.15 – 10.15 WIB
+                        </li>
+                    </ul>
+                    <p class="text-xs text-gray-400 mt-4">*Durasi Program: 6 Bulan</p>
+                </div>
+
+                <!-- Lokasi -->
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-blue-500 text-center">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-map-location-dot text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Lokasi Belajar</h3>
+                    <p class="text-gray-600 mb-4">
+                        Jl. Kampung Baru 1,<br>
+                        Kel. Kelapa Dua Wetan,<br>
+                        Ciracas, Jakarta Timur
+                    </p>
+                    <a href="https://maps.google.com/?q=Jl.+Kampung+Baru+1+Ciracas" target="_blank" class="text-blue-500 text-sm font-bold hover:underline">
+                        Lihat di Google Maps &rarr;
+                    </a>
+                </div>
+
+                <!-- Biaya -->
+                <div id="biaya" class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-yellow-500 text-center relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-yellow-400 text-xs font-bold px-3 py-1 rounded-bl-lg">BEST VALUE</div>
+                    <div class="w-12 h-12 bg-yellow-100 text-yellow-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fa-solid fa-tag text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Biaya Investasi</h3>
+                    <p class="text-gray-500 text-sm mb-4">Sangat terjangkau untuk masa depan anak</p>
+                    <div class="text-4xl font-extrabold text-gray-800 mb-2">
+                        <span class="text-lg align-top text-gray-500">Rp</span>150rb<span class="text-sm font-normal text-gray-500">/bln</span>
+                    </div>
+                    <p class="text-xs text-gray-500 mb-6">Per anak. Tanpa biaya tersembunyi.</p>
+                    <a href="https://bit.ly/daftar-komputeranak?r=qr" class="block w-full bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-2 rounded-lg transition">
+                        Daftar Sekarang
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Kata Orang Tua</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Testi 1 -->
+                <div class="bg-gray-50 p-6 rounded-xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-blue-100 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 relative z-10 italic mb-4">"Alhamdulillah, anak saya sekarang jadi lebih percaya diri pakai laptop. Tugas sekolah bikin PPT sekarang dikerjain sendiri, hasilnya bagus banget. Gurunya juga sabar."</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-200 rounded-full flex items-center justify-center text-pink-600 font-bold">IB</div>
+                        <div>
+                            <h5 class="font-bold text-gray-800 text-sm">Ibu Budiarti</h5>
+                            <p class="text-xs text-gray-500">Wali Murid Kls 5 SD</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testi 2 -->
+                <div class="bg-gray-50 p-6 rounded-xl relative">
+                    <i class="fa-solid fa-quote-left text-4xl text-green-100 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 relative z-10 italic mb-4">"Awalnya khawatir anak main game terus. Setelah ikut les ini, main gamenya jadi berkurang, malah jadi penasaran bikin game sendiri pakai Scratch. Recommended!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-200 rounded-full flex items-center justify-center text-blue-600 font-bold">PA</div>
+                        <div>
+                            <h5 class="font-bold text-gray-800 text-sm">Pak Agung</h5>
+                            <p class="text-xs text-gray-500">Wali Murid Kls 4 SD</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 bg-blue-600 text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-pattern opacity-10"></div> <!-- Pattern placeholder -->
+        <div class="container mx-auto px-4 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Kuota Terbatas!</h2>
+            <p class="text-blue-100 text-lg mb-8 max-w-2xl mx-auto">
+                Jangan lewatkan kesempatan emas ini. Kelas kecil menjamin anak Anda mendapatkan perhatian penuh. Segera amankan kursi untuk putra/putri Anda.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://bit.ly/daftar-komputeranak?r=qr" target="_blank" class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-yellow-300 transition transform hover:scale-105 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Daftar via WhatsApp
+                </a>
+            </div>
+            <p class="mt-4 text-sm text-blue-200 opacity-80">Kami akan membalas pesan Anda secepatnya.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-12 border-t border-gray-700">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-center md:text-left">
+                    <h3 class="text-white text-xl font-bold mb-2">Les Komputer Anak SD</h3>
+                    <p class="text-sm text-gray-400">Membangun generasi cerdas digital.</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p class="mb-2"><i class="fa-brands fa-whatsapp mr-2 text-green-400"></i> 0856-9745-8321</p>
+                    <p class="text-sm text-gray-500">Ciracas, Jakarta Timur</p>
+                </div>
+            </div>
+            <hr class="border-gray-700 my-8">
+            <div class="text-center text-xs text-gray-500">
+                &copy; 2024 Les Komputer Anak SD. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://bit.ly/daftar-komputeranak?r=qr" target="_blank" class="floating-wa bg-green-500 hover:bg-green-600 text-white rounded-full w-16 h-16 flex items-center justify-center text-3xl" title="Hubungi Kami">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
