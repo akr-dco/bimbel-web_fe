@@ -1,18 +1,14 @@
-version: "3.8"
-
 services:
-  web-bimbel-dev:
-    image: web-bimbel-dev:latest
-    container_name: web-bimbel-dev
+  web-bimbel:
+    image: web-bimbel:latest
+    build: .
+    container_name: web-bimbel
     restart: always
     ports:
-      - "2001:80"
+      - "2002:80"
     networks:
-      - leskomputer-net
-    environment:
-      - VIRTUAL_HOST=leskomputer.akr.co.id
-      - VIRTUAL_PORT=80
+      - web-bimbel-net
 
 networks:
-  leskomputer-net:
+  web-bimbel-net:
     driver: bridge
